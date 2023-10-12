@@ -66,7 +66,7 @@ function guardarLocal() {
 
 }
 
-// FUNCIONES 
+// FUNCIONES
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "nombreAlumno":
@@ -102,8 +102,8 @@ const validarFormulario = (e) => {
                     document.getElementById(`inputNota1`).classList.remove('cajaInputCorrecto');
                     document.getElementById(`inputNota1`).classList.add('cajaInputIncorrecto');
                     todoBien=false;
-                }            
-        break; 
+                }
+        break;
         case "nota2":
             if(expresiones.notas.test(e.target.value)){
                 document.getElementById(`inputNota2`).classList.remove('cajaInputIncorrecto');
@@ -113,8 +113,8 @@ const validarFormulario = (e) => {
                 document.getElementById(`inputNota2`).classList.remove('cajaInputCorrecto');
                 document.getElementById(`inputNota2`).classList.add('cajaInputIncorrecto');
                 todoBien=false;
-            }     
-        break; 
+            }
+        break;
         case "nota3":
             if(expresiones.notas.test(e.target.value)){
                 document.getElementById(`inputNota3`).classList.remove('cajaInputIncorrecto');
@@ -125,12 +125,11 @@ const validarFormulario = (e) => {
                 document.getElementById(`inputNota3`).classList.add('cajaInputIncorrecto');
                 todoBien=false;
             }
-        break; 
+        break;
 
 	}
 }
 inputs.forEach((input) => {
-	//input.addEventListener('keyup', ()=>{ console.log("tecla levantada")});
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
@@ -181,7 +180,7 @@ function buscarApellido (){
             let li = document.createElement("h3");
             let aux="- Apellido no encontrado. Intentelo nuevamente -";
             li.textContent=aux;
-            listar.appendChild(li);  
+            listar.appendChild(li);
         }else{
         console.table(alumno[resultado]);
         let listar=document.querySelector(".mostrarApellido");
@@ -204,7 +203,6 @@ function buscarApellido (){
 document.getElementById("inputBuscarApellido").value =null;
 }
 
-        
 function funcionCargar(){
     todoBien=false;
     let n1=parseFloat(document.getElementById("inputNota1").value);
@@ -213,7 +211,7 @@ function funcionCargar(){
     if(notaValida(n1) === true && notaValida(n2)=== true && notaValida(n3) === true){
         todoBien=true;
     }
-    if (todoBien===true) {    
+    if (todoBien===true) {
         let nombre= document.getElementById("inputNombre").value;
         nombre=nombre.toString();
         nombre=nombre.toUpperCase();
@@ -228,7 +226,7 @@ function funcionCargar(){
         if(promedio>=7){
             contadorAprobados++;
             arrayAprobadosN.push(nombre);
-            arrayAprobadosA.push(apellido);        
+            arrayAprobadosA.push(apellido);
         }else{
             contadorDesaprobados++;
             arrayDesaprobadosN.push(nombre);
@@ -241,33 +239,32 @@ function funcionCargar(){
         arrayTrimestre2.push(trimestre2.value);
         arrayTrimestre3.push(trimestre3.value);
         alumno.push({nombre:nombre, apellido:apellido, promedio:promedio});
-        
+
         document.getElementById("inputNombre").value = null;
         document.getElementById("inputApellido").value = null;
         document.getElementById("inputNota1").value = null;
         document.getElementById("inputNota2").value = null;
-        document.getElementById("inputNota3").value = null; 
+        document.getElementById("inputNota3").value = null;
         document.getElementById("inputNombre").focus();
         console.log("Datos enviados");
         todoBien=false;
         removerEstilos();
         document.getElementById("avisoOk").innerHTML="Elementos cargados correctamente ✓";
         document.getElementById("avisoError").innerHTML=null;
-        
+
         // MUESTRA NOMBRE APELLIDO Y PROMEDIO DESPUES DE CLIC AL BOTON ENVIAR
         let lista=document.querySelector(".thNombre");
         let li1 = document.createElement("td");
         let li = document.createElement("tr");
         li.textContent=nombre;
         lista.appendChild(li1);
-        lista.appendChild(li);       
+        lista.appendChild(li);
         lista=document.querySelector(".thApellido");
         li1 = document.createElement("td");
         li = document.createElement("tr");
         li.textContent=apellido;
         lista.appendChild(li1);
         lista.appendChild(li);
-        
         lista=document.querySelector(".thPromedio");
         li1 = document.createElement("td");
         li = document.createElement("tr");

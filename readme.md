@@ -63,8 +63,8 @@ Mariano Pablo Vaccaro
 
 
 
-GitHub: https://github.com/Mariano581/simuladorProm2.0
-Simulador: https://mariano581.github.io/simuladorProm2.0/
-web: https://simulador-prom2-0.vercel.app/
+GitHub: https://github.com/Mariano581/simuladorProm3.0
+Simulador: https://mariano581.github.io/simuladorProm3.0/
+web: https://simulador-prom3-0.vercel.app/
 
 
